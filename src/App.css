@@ -40,3 +40,21 @@
 .btn-outline-secondary {
   margin-right: 1rem;
 }
+* {
+  margin: 0px;
+}
+li {
+  font-family: "Noto Sans Sinhala", sans-serif;
+  font-weight: 500;
+}
+a:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  color: #14532d !important;
+}
+#button-addon2:hover {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 10px 10px 38px 3px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 10px 10px 38px 3px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 10px 10px 38px 3px rgba(0, 0, 0, 0.49);
+}
