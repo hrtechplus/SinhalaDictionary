@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -74,22 +73,6 @@ function App() {
           </div>
         )}
       </div>
-      <script
-        src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
-        crossorigin
-      ></script>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
-        crossorigin
-      ></script>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
-        crossorigin
-      ></script>
-
-      <script>var Alert = ReactBootstrap.Alert;</script>
     </div>
   );
 }
