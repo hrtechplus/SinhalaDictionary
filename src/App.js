@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,6 +24,12 @@ function App() {
 
   return (
     <div className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0">
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous"
+      />
       <div className="container">
         <div className="d-flex justify-content-between">
           <div className="align-self-start my-2">
@@ -57,14 +64,32 @@ function App() {
         {searchResults.length > 0 && (
           <div className="my-3">
             <h2>Search Results:</h2>
-            <ul>
+            <ul className="list-group list-group-flush  overflow-y-auto shadow-sm p-1 rounded-3">
               {searchResults.map((result, index) => (
-                <li key={index}>{result}</li>
+                <li key={index} className="list-group-item font-weight-bold">
+                  {result}
+                </li>
               ))}
             </ul>
           </div>
         )}
       </div>
+      <script
+        src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"
+        crossorigin
+      ></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"
+        crossorigin
+      ></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
+        crossorigin
+      ></script>
+
+      <script>var Alert = ReactBootstrap.Alert;</script>
     </div>
   );
 }
