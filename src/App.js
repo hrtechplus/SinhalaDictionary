@@ -45,7 +45,7 @@ function App() {
                 onChange={handleInputChange}
               />
               <button
-                className="btn btn-primary"
+                className="btn btn-success text-white btn-outline-success shadow mx-1 my-2 rounded-3"
                 type="button"
                 onClick={handleSearch}
               >
