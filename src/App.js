@@ -3,7 +3,18 @@ import axios from "axios";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [quote, setquote] = useState("");
+  const [auther, setauther] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  function quotable() {
+    fetch("https://api.quotable.io/random")
+      .then((res) => res.json())
+      .then((data) =>
+        console.log(setquote(data.content), setauther(data.author))
+      );
+  }
+  window.addEventListener("load", quotable);
 
   const handleSearch = async () => {
     // Format the search term
@@ -24,7 +35,9 @@ function App() {
     // If there are no results, show an error message
     let aseLineForDisplay;
     if (filteredLines.length === 0) {
-      setSearchResults(["No results found"]);
+      setSearchResults([
+        "We couldn't find this Word.Click the Contribute Button below to add this word.",
+      ]);
     } else {
       for (let i = 0; i < filteredLines.length; i++) {
         const lineByLine = filteredLines[i];
@@ -153,7 +166,13 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="container shadow-lg rounded-4 px-2 py-2">
+          <div className="container shadow-lg rounded-4 px-2 py-2 ">
+            <div class="rounded-3 bg-white p-2  animate__animated animate__fadeIn animate__delay-2s">
+              <p class=" blockquote m-0 lh-1 mb-1">{quote}</p>
+              <p class="blockquote-footer m-0">{auther}</p>
+              <hr />
+            </div>
+
             <ul
               className="list-group list-group-flush overflow-y-auto shadow-sm p-1 rounded-3 "
               style={{ maxHeight: "250px", overflow: "auto" }}
