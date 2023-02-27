@@ -17,6 +17,8 @@ function App() {
   window.addEventListener("load", quotable);
 
   const handleSearch = async () => {
+    setauther("dfdf");
+    setquote("fdf");
     // Format the search term
     const formattedTerm = searchTerm.trim().toLowerCase();
 
