@@ -12,6 +12,7 @@ function App() {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSearch();
+      setDefintion("Defintions of:");
     }
   };
 
@@ -137,7 +138,7 @@ function App() {
           </div>
           <div className="container shadow-lg rounded-4 px-2 py-2">
             <ul
-              className="list-group list-group-flush overflow-y-auto shadow-sm p-1 rounded-3"
+              className="list-group list-group-flush overflow-y-auto shadow-sm p-1 rounded-3 "
               style={{ maxHeight: "250px", overflow: "auto" }}
             >
               {searchResults.map((result, index) => (
@@ -145,7 +146,7 @@ function App() {
                   <li
                     key={index}
                     id="listItem"
-                    className="list-group-item font-weight-bold"
+                    className="list-group-item font-weight-bold animate__animated animate__fadeIn  "
                     style={{
                       fontFamily: "Noto Sans Sinhala",
                       fontWeight: "500",
