@@ -95,7 +95,7 @@ function App() {
     <body className="px-1 bg">
       <div
         id="mainDiv"
-        className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0"
+        className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0 overflow-y-auto"
       >
         <link
           rel="stylesheet"
@@ -169,7 +169,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="container shadow-lg rounded-4 px-2 py-2 ">
+          <div className="container shadow-lg rounded-4 px-2 py-1 ">
             <div class="rounded-3 bg-white p-2  animate__animated animate__fadeIn animate__delay-2s">
               <p class=" blockquote m-0 lh-1 mb-1">{quote}</p>
               <p class="blockquote-footer m-0">{auther}</p>
@@ -198,8 +198,8 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="container m-0 rounded-3 py-2">
-          <div className="d-flex justify-content-center mt-5 mb-2">
+        <div className="container m-0 rounded-3 py-0">
+          <div className="d-flex justify-content-center mb-2 mt-3">
             <div className="">
               <a
                 type="button"
@@ -236,9 +236,9 @@ function App() {
               </a>
             </div>
           </div>
-          <footer>
+          <footer className="m-0">
             <p
-              className="text-center text-black-50 text-break"
+              className="text-center text-black-50 text-break mb-2 mt-1"
               style={{ fontSize: "12px" }}
             >
               © 2023 Hasindu Rangika.
