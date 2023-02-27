@@ -44,13 +44,23 @@ function App() {
           return a.localeCompare(b);
         });
 
-        setSearchResults([...nothingNew, ...results]);
+        if (nothingNew.length === 0) {
+          setSearchResults([`Error: ${formattedInput} not found`]);
+        } else {
+          setSearchResults([...nothingNew, ...results]);
+        }
       })
       .catch((error) => console.log(error));
   };
 
   return (
     <div className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0">
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous"
+      />
       <div className="container">
         <div className="input-group mb-3">
           <input
