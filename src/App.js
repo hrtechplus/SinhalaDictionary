@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./index.css";
 const AnimatedShape = `https://spectacular-phoenix-5e8e43.netlify.app/AnimatedShape.svg`;
 const ooorganize =
   "https://spectacular-phoenix-5e8e43.netlify.app/ooorganize.svg";
@@ -8,6 +9,7 @@ const helloJs =
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [Definition, setDefintion] = useState(`Defintions of:`);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -50,7 +52,10 @@ function App() {
         });
 
         if (nothingNew.length === 0) {
-          setSearchResults([`Error: ${formattedInput} not found`]);
+          setDefintion("We couldn't definitons of:");
+          setSearchResults([
+            `If you got it Simply,Click the Contribute Button below to add this word.`,
+          ]);
         } else {
           setSearchResults([...nothingNew, ...results]);
         }
@@ -62,7 +67,7 @@ function App() {
     <body
       className="px-1 bg"
       style={{
-        backgroundImage: `url({AnimatedShape})`,
+        backgroundImage: `url(${AnimatedShape})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "auto",
       }}
@@ -103,8 +108,8 @@ function App() {
             <input
               type="text"
               className="form-control shadow-lg my-2 rounded-3 py-2"
-              placeholder="Search"
-              aria-label="Search"
+              placeholder="Search a Word"
+              aria-label="Search a Word"
               aria-describedby="button-addon2"
               value={inputValue}
               onChange={handleInputChange}
@@ -134,14 +139,14 @@ function App() {
               style={{
                 backgroundPosition: "40% 70%",
                 backgroundSize: "80px",
-                backgroundImage: `url({ooorganize})`,
+                backgroundImage: `url(${ooorganize})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "contain",
               }}
             >
               <div>
-                <p className="display-6 fs-5 fw-normal pl-2 text-body-tertiary">
-                  Definition of:
+                <p className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary">
+                  {Definition}
                   <span
                     id="defe"
                     className="display-6 fw-normal text-success-emphasis"
@@ -161,8 +166,9 @@ function App() {
               style={{ maxHeight: "250px", overflow: "auto" }}
             >
               {searchResults.map((result, index) => (
-                <div className="m-0 rounded-3" key={index + 1}>
+                <>
                   <li
+                    key={index}
                     id="listItem"
                     className="list-group-item font-weight-bold"
                     style={{
@@ -172,7 +178,7 @@ function App() {
                   >
                     {result}
                   </li>
-                </div>
+                </>
               ))}
             </ul>
           </div>
@@ -214,7 +220,7 @@ function App() {
               className="text-center text-black-50 text-break"
               style={{ fontSize: "12px" }}
             >
-              &copy 2023 Hasindu Rangika.
+              © 2023 Hasindu Rangika.
               <a
                 target="_blank"
                 href="https://hasindu.online"
