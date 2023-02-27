@@ -1,10 +1,4 @@
 import React, { useState } from "react";
-import "./index.css";
-const AnimatedShape = `https://spectacular-phoenix-5e8e43.netlify.app/AnimatedShape.svg`;
-const ooorganize =
-  "https://spectacular-phoenix-5e8e43.netlify.app/ooorganize.svg";
-const helloJs =
-  "https://spectacular-phoenix-5e8e43.netlify.app/Apps/helloiam.js";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
