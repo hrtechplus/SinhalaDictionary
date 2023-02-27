@@ -61,11 +61,11 @@ function App() {
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
         crossorigin="anonymous"
       />
-      <div className="container">
-        <div className="input-group mb-3">
+      <div className="container p-2">
+        <div className="input-group mb-3 px-3">
           <input
             type="text"
-            className="form-control"
+            className="form-control shadow-lg my-2 rounded-3 py-2"
             placeholder="Search"
             aria-label="Search"
             aria-describedby="button-addon2"
@@ -74,7 +74,7 @@ function App() {
             onKeyPress={handleKeyPress}
           />
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-success text-white btn-outline-success shadow-lg mx-1 my-2 rounded-3"
             type="button"
             id="button-addon2"
             onClick={handleSearch}
@@ -82,13 +82,18 @@ function App() {
             Search
           </button>
         </div>
-        <ul className="list-group">
-          {searchResults.map((result, index) => (
-            <div key={index + 1}>
-              <li className="list-group-item">{result}</li>
-            </div>
-          ))}
-        </ul>
+        <div className="container shadow-lg rounded-4 px-2 py-2">
+          <ul
+            className="list-group list-group-flush overflow-y-auto shadow-sm p-1 rounded-3"
+            style={{ maxHeight: "250px", overflow: "auto" }}
+          >
+            {searchResults.map((result, index) => (
+              <div key={index + 1}>
+                <li className="list-group-item font-weight-bold">{result}</li>
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
