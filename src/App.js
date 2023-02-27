@@ -160,6 +160,8 @@ function App() {
             <div className="">
               <a
                 type="button"
+                rel="noreferrer"
+                variant="outline-success"
                 className="btn btn-outline-success mx-1 btn-secondary bg-white rounded-3"
                 target="_blank"
                 href="https://www.buymeacoffee.com/hasinduonline"
@@ -170,6 +172,8 @@ function App() {
             <div>
               <a
                 type="button"
+                rel="noreferrer"
+                variant="outline-success"
                 className="btn btn-outline-success mx-1 btn-secondary bg-white rounded-3"
                 href="https://forms.gle/WNEV374a8y5pboxW6"
                 target="_blank"
@@ -180,6 +184,8 @@ function App() {
             <div>
               <a
                 type="button"
+                rel="noreferrer"
+                variant="outline-success"
                 href="mailto:hello@hasindu.online"
                 className="btn btn-outline-success mx-1 btn-secondary bg-white rounded-3"
               >
@@ -195,6 +201,7 @@ function App() {
               © 2023 Hasindu Rangika.
               <a
                 target="_blank"
+                rel="noreferrer"
                 href="https://hasindu.online"
                 className="text-decoration-none text-success-emphasis"
               >
