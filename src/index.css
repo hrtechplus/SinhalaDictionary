@@ -18,3 +18,11 @@ a:hover {
   -webkit-box-shadow: 10px 10px 38px 3px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 10px 10px 38px 3px rgba(0, 0, 0, 0.49);
 }
+#podiTitle {
+  color: #14532d;
+}
+body {
+  background-image: url(https://spectacular-phoenix-5e8e43.netlify.app/AnimatedShape.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+}
