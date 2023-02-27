@@ -64,14 +64,7 @@ function App() {
   };
 
   return (
-    <body
-      className="px-1 bg"
-      style={{
-        backgroundImage: `url(${AnimatedShape})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "auto",
-      }}
-    >
+    <body className="px-1 bg">
       <div className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0">
         <link
           rel="stylesheet"
@@ -137,16 +130,7 @@ function App() {
           )`,
             }}
           >
-            <div
-              className="d-flex justify-content-between"
-              style={{
-                backgroundPosition: "40% 70%",
-                backgroundSize: "80px",
-                backgroundImage: `url(${ooorganize})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-              }}
-            >
+            <div className="d-flex justify-content-between">
               <div>
                 <p className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary">
                   {Definition}
