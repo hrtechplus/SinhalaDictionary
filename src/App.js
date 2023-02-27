@@ -47,7 +47,7 @@ function App() {
         });
 
         if (nothingNew.length === 0) {
-          setDefintion("We couldn't definitons of:");
+          setDefintion("We couldn't find:");
           setSearchResults([
             `If you got it Simply,Click the Contribute Button below to add this word.`,
           ]);
