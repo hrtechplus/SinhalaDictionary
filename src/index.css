@@ -7,6 +7,9 @@ li {
   font-family: "Noto Sans Sinhala", sans-serif;
   font-weight: 500;
 }
+#hasinduOnline {
+  color: #146c43;
+}
 a:hover {
   transition: all 0.3s ease-in-out;
   transform: scale(1.1);
@@ -25,4 +28,11 @@ body {
   background-image: url(https://spectacular-phoenix-5e8e43.netlify.app/AnimatedShape.svg);
   background-repeat: no-repeat;
   background-size: auto;
+}
+#mainDiv {
+  background-position: 70% 10%;
+  background-size: 50px;
+  background-image: url("https://spectacular-phoenix-5e8e43.netlify.app/ooorganize.svg  ");
+  background-repeat: repeat;
+  background-size: cover;
 }

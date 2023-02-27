@@ -59,7 +59,10 @@ function App() {
 
   return (
     <body className="px-1 bg">
-      <div className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0">
+      <div
+        id="mainDiv"
+        className="container-md shadow-lg rounded-4 position-absolute top-50 start-50 translate-middle bg-white p-0"
+      >
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -203,6 +206,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
                 href="https://hasindu.online"
+                id="hasinduOnline"
                 className="text-decoration-none text-success-emphasis"
               >
                 hasindu.online
