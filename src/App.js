@@ -5,10 +5,11 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [quote, setquote] = useState("");
   const [auther, setauther] = useState("");
+  // const [width, setwidth] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   function quotable() {
-    fetch("https://api.quotable.io/random")
+    fetch("https://api.quotable.io/random?maxLength=50")
       .then((res) => res.json())
       .then((data) =>
         console.log(setquote(data.content), setauther(data.author))
@@ -17,8 +18,8 @@ function App() {
   window.addEventListener("load", quotable);
 
   const handleSearch = async () => {
-    setauther("dfdf");
-    setquote("fdf");
+    // setauther(null);
+    // setquote(null);
     // Format the search term
     const formattedTerm = searchTerm.trim().toLowerCase();
 
