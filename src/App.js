@@ -114,16 +114,7 @@ function App() {
               Search
             </button>
           </div>
-          <div
-            className="container m-0"
-            style={{
-              backgroundColor: `linear-gradient(
-            180deg,
-            rgba(#3fe955, 0.15),
-            rgba(#25b832, 0)
-          )`,
-            }}
-          >
+          <div className="container m-0">
             <div className="d-flex justify-content-between">
               <div>
                 <p className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary">
