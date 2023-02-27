@@ -1,61 +1,78 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [Definition, setDefintion] = useState(`Defintions of:`);
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const handleSearch = async () => {
+    // Format the search term
+    const formattedTerm = searchTerm.trim().toLowerCase();
 
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSearch();
-      setDefintion("Defintions of:");
+    // Fetch the data file
+    const { data } = await axios.get("/data.txt");
+
+    // Split the data into lines
+    const lines = data.split("\n");
+
+    // Filter the lines that contain the search term
+    const filteredLines = lines.filter((line) =>
+      line.toLowerCase().includes(formattedTerm)
+    );
+    console.log(`filteredLines ${filteredLines} --------------`);
+    /*filteredLines nothing	අභාවය, ආකිංචන්‍යය, කිසිත් නැතිබව, ශූන්‍යය,nothingness	අකිංචනය, අභාවය, ශූන්‍යය,nothings	පොඩි පොඩි දේ, වැදගැම්මකට නැති දේ -------------- */
+    // If there are no results, show an error message
+    let aseLineForDisplay;
+    if (filteredLines.length === 0) {
+      setSearchResults(["No results found"]);
+    } else {
+      for (let i = 0; i < filteredLines.length; i++) {
+        const lineByLine = filteredLines[i];
+        // console.log(`Line By Line ${lineByLine} ---- end of lineByline -----`);
+
+        const wordsArray = lineByLine.split("\t");
+        const wordBeforeTab = wordsArray[0];
+        aseLineForDisplay = lineByLine;
+        // console.log(
+        //   `wordBeforeTab this inside in for loop ${wordBeforeTab} --- end of wordBeforeTab `
+        // ); // Output: "anew"
+        if (wordBeforeTab === formattedTerm) {
+          // console.log("The strings are equal");
+
+          // console.log(`This is line 310 ${aseLineForDisplay}`);
+          const indexOfSearchElement = filteredLines.indexOf(aseLineForDisplay);
+          //now remove  search elemelement
+          filteredLines.splice(indexOfSearchElement, 1);
+          filteredLines.unshift(aseLineForDisplay);
+
+          break;
+        } else {
+          aseLineForDisplay = `We haven't this word.But We can add it for you.Simply,click the "Contribute" button below`;
+          // console.log("The strings are not equal");
+        }
+
+        // Process the line here...
+      }
+
+      // Move the matching line to the top of the results
+      const index = filteredLines.findIndex((line) =>
+        line.toLowerCase().includes(formattedTerm)
+      );
+      if (index !== 0) {
+        filteredLines.splice(0, 0, filteredLines.splice(index, 1)[0]);
+      }
+      setSearchResults(filteredLines);
     }
   };
 
-  const handleSearch = () => {
-    const formattedInput = inputValue.trim().toLowerCase();
-    fetch("data.txt")
-      .then((response) => response.text())
-      .then((data) => {
-        const lines = data.split("\n");
-        const results = [];
-        const nothingNew = [];
+  const handleInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
 
-        lines.forEach((line) => {
-          const formattedLine = line.trim().toLowerCase();
-          if (formattedLine.includes(formattedInput)) {
-            if (formattedLine.startsWith(formattedInput)) {
-              nothingNew.push(formattedLine);
-            } else {
-              results.push(formattedLine);
-            }
-          }
-        });
-
-        nothingNew.sort((a, b) => {
-          if (a === formattedInput) {
-            return -1;
-          }
-          if (b === formattedInput) {
-            return 1;
-          }
-          return a.localeCompare(b);
-        });
-
-        if (nothingNew.length === 0) {
-          setDefintion("We couldn't find:");
-          setSearchResults([
-            `If you got it Simply,Click the Contribute Button below to add this word.`,
-          ]);
-        } else {
-          setSearchResults([...nothingNew, ...results]);
-        }
-      })
-      .catch((error) => console.log(error));
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -105,9 +122,9 @@ function App() {
               placeholder="Search a Word"
               aria-label="Search a Word"
               aria-describedby="button-addon2"
-              value={inputValue}
+              value={searchTerm}
               onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyDown}
             />
             <button
               className="btn btn-success text-white btn-outline-success shadow-lg mx-1 my-2 rounded-3"
@@ -122,12 +139,12 @@ function App() {
             <div className="d-flex justify-content-between">
               <div>
                 <p className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary">
-                  {Definition}
+                  Definition of:
                   <span
                     id="defe"
                     className="display-6 fw-normal text-success-emphasis"
                   >
-                    {inputValue}
+                    {searchTerm}
                   </span>
                 </p>
               </div>
