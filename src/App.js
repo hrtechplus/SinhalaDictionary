@@ -23,7 +23,7 @@ function App() {
     // setquote(null);
     // Format the search term
     const formattedTerm = searchTerm.trim().toLowerCase();
-    setdef(formattedTerm);
+    setdef(searchTerm);
 
     // Fetch the data file
     const { data } = await axios.get("/data.txt");
