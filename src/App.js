@@ -42,6 +42,7 @@ function App() {
     let aseLineForDisplay;
     if (filteredLines.length === 0) {
       seruserset(`We couldn't find this Word or Re-try without 'S' `);
+      setdef(null);
       setSearchResults(["Click the Contribute Button below to add this word."]);
     } else {
       seruserset("Defintions of:");
@@ -67,7 +68,8 @@ function App() {
 
           break;
         } else {
-          seruserset(`We couldn't find this Word or re-try without 'S'`);
+          seruserset(`We couldn't find this Word or Re-try without 'S'`);
+
           aseLineForDisplay = `We haven't this word.But We can add it for you.Simply,click the "Contribute" button below`;
           // console.log("The strings are not equal");
         }
@@ -88,6 +90,14 @@ function App() {
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
+  };
+  const onFocusInput = () => {
+    // alert("defd");
+    setSearchTerm("");
+  };
+  const onFocusInputClick = () => {
+    // alert("defd");
+    setSearchTerm("");
   };
 
   const handleKeyDown = (event) => {
@@ -144,6 +154,8 @@ function App() {
               aria-label="Search a Word"
               aria-describedby="button-addon2"
               value={searchTerm}
+              onClick={onFocusInputClick}
+              onFocus={onFocusInput}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
             />
