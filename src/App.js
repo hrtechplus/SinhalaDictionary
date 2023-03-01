@@ -5,7 +5,8 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [quote, setquote] = useState("");
   const [auther, setauther] = useState("");
-  // const [width, setwidth] = useState("");
+  const [userser, seruserset] = useState("Enter Word to Search");
+  const [def, setdef] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   function quotable() {
@@ -22,6 +23,7 @@ function App() {
     // setquote(null);
     // Format the search term
     const formattedTerm = searchTerm.trim().toLowerCase();
+    setdef(formattedTerm);
 
     // Fetch the data file
     const { data } = await axios.get("/data.txt");
@@ -35,13 +37,14 @@ function App() {
     );
     console.log(`filteredLines ${filteredLines} --------------`);
     /*filteredLines nothing	අභාවය, ආකිංචන්‍යය, කිසිත් නැතිබව, ශූන්‍යය,nothingness	අකිංචනය, අභාවය, ශූන්‍යය,nothings	පොඩි පොඩි දේ, වැදගැම්මකට නැති දේ -------------- */
-    // If there are no results, show an error message
+    // If there are no results, show an error messagenpm start
+
     let aseLineForDisplay;
     if (filteredLines.length === 0) {
-      setSearchResults([
-        "We couldn't find this Word.Click the Contribute Button below to add this word.",
-      ]);
+      seruserset(`We couldn't find this Word or Re-try without 'S' `);
+      setSearchResults(["Click the Contribute Button below to add this word."]);
     } else {
+      seruserset("Defintions of:");
       for (let i = 0; i < filteredLines.length; i++) {
         const lineByLine = filteredLines[i];
         // console.log(`Line By Line ${lineByLine} ---- end of lineByline -----`);
@@ -53,6 +56,7 @@ function App() {
         //   `wordBeforeTab this inside in for loop ${wordBeforeTab} --- end of wordBeforeTab `
         // ); // Output: "anew"
         if (wordBeforeTab === formattedTerm) {
+          seruserset("Definition of:");
           // console.log("The strings are equal");
 
           // console.log(`This is line 310 ${aseLineForDisplay}`);
@@ -63,6 +67,7 @@ function App() {
 
           break;
         } else {
+          seruserset(`We couldn't find this Word or re-try without 'S'`);
           aseLineForDisplay = `We haven't this word.But We can add it for you.Simply,click the "Contribute" button below`;
           // console.log("The strings are not equal");
         }
@@ -154,13 +159,16 @@ function App() {
           <div className="container m-0">
             <div className="d-flex justify-content-between">
               <div>
-                <p className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary">
-                  Definition of:
+                <p
+                  className="display-6 fs-5 fw-normal pl-2 text-muted text-body-tertiary"
+                  id="usersearch"
+                >
+                  {userser}
                   <span
                     id="defe"
                     className="display-6 fw-normal text-success-emphasis"
                   >
-                    {searchTerm}
+                    {def}
                   </span>
                 </p>
               </div>
@@ -202,11 +210,13 @@ function App() {
           <div className="d-flex justify-content-center mb-2 mt-3">
             <div className="">
               <a
+                id="belowbtn"
                 type="button"
                 rel="noreferrer"
                 variant="outline-success"
-                className="btn btn-outline-success mx-1 btn-secondary bg-white rounded-3"
+                className="btn btn-outline-success mx-1 btn-secondary bg-white rounded-3 belowbtn"
                 target="_blank"
+                b
                 href="https://www.buymeacoffee.com/hasinduonline"
               >
                 Support
@@ -214,6 +224,7 @@ function App() {
             </div>
             <div>
               <a
+                id="belowbtn"
                 type="button"
                 rel="noreferrer"
                 variant="outline-success"
@@ -226,6 +237,7 @@ function App() {
             </div>
             <div>
               <a
+                id="belowbtn"
                 type="button"
                 rel="noreferrer"
                 variant="outline-success"
