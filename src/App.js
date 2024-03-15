@@ -118,8 +118,14 @@ function App() {
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous"
         />
-        <div className="container">
-          <div className="d-flex justify-content-between">
+        <div
+          className="container"
+          style={{ backgroundImage: `url("./curve.svg")` }}
+        >
+          <div
+            className="d-flex justify-content-between"
+            style={{ backgroundImage: `url("./curve.svg")` }}
+          >
             <div className="align-self-start my-2">
               <p
                 className="lh-1 fw-semibold m-0 pt-1 text-black-80 text-success-emphasis"
@@ -128,7 +134,7 @@ function App() {
                 Sinhala-English
               </p>
               <a
-                href="https://dictionary.hasindu.online/"
+                href="https://dictionary.hasindu.me/"
                 className="display-3 m-0 pb-1 fw-light text-center text-success text-decoration-none"
               >
                 Dictionary
@@ -137,7 +143,7 @@ function App() {
 
             <div>
               <img
-                src="https://dictionary.hasindu.online/img/Aicon.png"
+                src="./Aicon.png	"
                 width="74px"
                 alt=""
                 className="rounded-5 float-end my-1"
@@ -145,7 +151,11 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="container p-2">
+        <div
+          className="container p-2"
+          style={{ backgroundImage: `url("./curve.svg")` }}
+          s
+        >
           <div className="input-group mb-3 px-3">
             <input
               type="text"
@@ -265,15 +275,15 @@ function App() {
               className="text-center text-black-50 text-break mb-2 mt-1"
               style={{ fontSize: "12px" }}
             >
-              © 2023 Hasindu Rangika.
+              © 2024 Hasindu Rangika.
               <a
                 target="_blank"
                 rel="noreferrer"
-                href="https://hasindu.online"
+                href="https://hasindu.me"
                 id="hasinduOnline"
                 className="text-decoration-none text-success-emphasis"
               >
-                hasindu.online
+                hasindu.me
               </a>
             </p>
           </footer>
