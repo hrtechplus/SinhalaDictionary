@@ -118,14 +118,8 @@ function App() {
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous"
         />
-        <div
-          className="container"
-          style={{ backgroundImage: `url("./curve.svg")` }}
-        >
-          <div
-            className="d-flex justify-content-between"
-            style={{ backgroundImage: `url("./curve.svg")` }}
-          >
+        <div className="container">
+          <div className="d-flex justify-content-between">
             <div className="align-self-start my-2">
               <p
                 className="lh-1 fw-semibold m-0 pt-1 text-black-80 text-success-emphasis"
