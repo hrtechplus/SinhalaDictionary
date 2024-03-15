@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dictionary/static/css/main.657f4834.css",
-    "main.js": "/dictionary/static/js/main.7d40b806.js",
-    "static/js/787.db28e160.chunk.js": "/dictionary/static/js/787.db28e160.chunk.js",
-    "index.html": "/dictionary/index.html",
-    "main.657f4834.css.map": "/dictionary/static/css/main.657f4834.css.map",
-    "main.7d40b806.js.map": "/dictionary/static/js/main.7d40b806.js.map",
-    "787.db28e160.chunk.js.map": "/dictionary/static/js/787.db28e160.chunk.js.map"
+    "main.css": "/SinhalaDictionary/static/css/main.657f4834.css",
+    "main.js": "/SinhalaDictionary/static/js/main.d37e14b7.js",
+    "static/js/787.db28e160.chunk.js": "/SinhalaDictionary/static/js/787.db28e160.chunk.js",
+    "index.html": "/SinhalaDictionary/index.html",
+    "main.657f4834.css.map": "/SinhalaDictionary/static/css/main.657f4834.css.map",
+    "main.d37e14b7.js.map": "/SinhalaDictionary/static/js/main.d37e14b7.js.map",
+    "787.db28e160.chunk.js.map": "/SinhalaDictionary/static/js/787.db28e160.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.657f4834.css",
-    "static/js/main.7d40b806.js"
+    "static/js/main.d37e14b7.js"
   ]
 }
