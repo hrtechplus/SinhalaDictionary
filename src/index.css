@@ -25,14 +25,14 @@ a:hover {
   color: #146c43;
 }
 body {
-  background-image: url(https://spectacular-phoenix-5e8e43.netlify.app/AnimatedShape.svg);
+  background-image: url("https://minupresidents.lk/images/AnimatedShape.svg");
   background-repeat: no-repeat;
   background-size: auto;
 }
 #mainDiv {
   background-position: 70% 10%;
   background-size: 50px;
-  background-image: url("https://spectacular-phoenix-5e8e43.netlify.app/ooorganize.svg  ");
+  background-image: url("https://minupresidents.lk/images/ooorganize.svg  ");
   background-repeat: repeat;
   background-size: cover;
 }
