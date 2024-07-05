@@ -25,14 +25,14 @@ a:hover {
   color: #146c43;
 }
 body {
-  background-image: url("imag/AnimatedShape.svg");
+  background-image: url("img/AnimatedShape.svg");
   background-repeat: no-repeat;
   background-size: auto;
 }
 #mainDiv {
   background-position: 70% 10%;
   background-size: 50px;
-  background-image: url("imag/ooorganize.svg  ");
+  background-image: url("img/ooorganize.svg");
   background-repeat: repeat;
   background-size: cover;
 }

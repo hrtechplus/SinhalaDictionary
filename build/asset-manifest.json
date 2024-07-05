@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/SinhalaDictionary/static/css/main.657f4834.css",
-    "main.js": "/SinhalaDictionary/static/js/main.d37e14b7.js",
-    "static/js/787.db28e160.chunk.js": "/SinhalaDictionary/static/js/787.db28e160.chunk.js",
-    "index.html": "/SinhalaDictionary/index.html",
-    "main.657f4834.css.map": "/SinhalaDictionary/static/css/main.657f4834.css.map",
-    "main.d37e14b7.js.map": "/SinhalaDictionary/static/js/main.d37e14b7.js.map",
-    "787.db28e160.chunk.js.map": "/SinhalaDictionary/static/js/787.db28e160.chunk.js.map"
+    "main.css": "/static/css/main.19cb363b.css",
+    "main.js": "/static/js/main.8c29b336.js",
+    "static/js/787.db28e160.chunk.js": "/static/js/787.db28e160.chunk.js",
+    "static/media/ooorganize.svg": "/static/media/ooorganize.4bbbb361969b104cc3cd.svg",
+    "static/media/AnimatedShape.svg": "/static/media/AnimatedShape.fa24e51062cb0d5588a5.svg",
+    "index.html": "/index.html",
+    "main.19cb363b.css.map": "/static/css/main.19cb363b.css.map",
+    "main.8c29b336.js.map": "/static/js/main.8c29b336.js.map",
+    "787.db28e160.chunk.js.map": "/static/js/787.db28e160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.657f4834.css",
-    "static/js/main.d37e14b7.js"
+    "static/css/main.19cb363b.css",
+    "static/js/main.8c29b336.js"
   ]
 }
